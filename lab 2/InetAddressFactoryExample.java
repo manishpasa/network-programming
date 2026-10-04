@@ -1,19 +1,28 @@
 import java.net.*;
-class InetAddressFactoryExample {
-    public static void main(String[] args) {
-        try {
-            InetAddress local = InetAddress.getLocalHost();
-            System.out.println("Local Host Address: " + local);
-            InetAddress named = InetAddress.getByName("www.example.com");
-            System.out.println("Named Host Address: " + named);
-            InetAddress[] all = InetAddress.getAllByName("www.example.com");
-            for (InetAddress addr : all) {
-                System.out.println("All Addresses: " + addr);
-            }byte[] ip = {127, 0, 0, 1};
-            InetAddress loopback = InetAddress.getByAddress(ip);
-            System.out.println("Loopback Address: " + loopback);
-        } catch (UnknownHostException e) {
-            System.out.println(e);
-        }
-    }
+public class InetAddressFactoryExample {
+public static void main(String[] args) {
+try {
+// 1. Get local host
+InetAddress local =
+InetAddress.getLocalHost();
+System.out.println("Local Host: " + local);
+// 2. Get address of a named host
+InetAddress named =
+InetAddress.getByName("www.google.com");
+System.out.println("Named Host: " + named);
+// 3. Get all addresses of a host
+InetAddress[] all =
+InetAddress.getAllByName("www.google.com");
+for (InetAddress address : all) {
+System.out.println("All Addresses: " + address);
+}
+// 4. Create address from IP bytes
+byte[] ip = {127, 0, 0, 1};
+InetAddress address =
+InetAddress.getByAddress(ip);
+System.out.println("IP Address: " + address);
+} catch (Exception e) {
+System.out.println(e);
+}
+}
 }
