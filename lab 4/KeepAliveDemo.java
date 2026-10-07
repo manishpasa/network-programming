@@ -1,8 +1,6 @@
 public class KeepAliveDemo {
-    public static void main(String[] args) {
-        // This is a placeholder for the KeepAliveDemo implementation.
-        // The actual code would go here.
-        System.setProperty("http.keepAlive","true");
-        System.out.println("KeepAliveDemo is running...");
-    }
-}
+public static void main(String[] args) {
+System.setProperty("http.keepAlive", "true");
+System.setProperty("http.maxConnections", "5");
+System.out.println("HTTP Keep-Alive configured.");
+}}
